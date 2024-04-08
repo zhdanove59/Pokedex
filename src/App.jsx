@@ -1,5 +1,6 @@
 import Hello from './component/nav'
 import PokemonCard from './components/PokemonCard'
+import NavBar from "./components/NavBar";
 import './App.css'
 import { useState } from "react";
 
@@ -42,6 +43,7 @@ function App() {
     ];
   
   const [pokemonIndex, setpokemonIndex] = useState(0);
+
   const handleClickSuivant=()=>{
     setpokemonIndex(pokemonIndex + 1)
   }
@@ -55,10 +57,12 @@ function App() {
     <>
     <div>
       <Hello/>
-      <div className='btn'>
-      <button disabled={!btnPrecedentActive} onClick={handleClickPrecedent} className='precedent'>Précédent</button>
-      <button disabled={!btnSuivantActive} onClick={handleClickSuivant} className='suivant'>Suivant</button>
-      </div>
+      <NavBar
+      handleClickPrecedent={handleClickPrecedent}
+      handleClickSuivant={handleClickSuivant}
+      btnPrecedentActive={btnPrecedentActive}
+      btnSuivantActive={btnSuivantActive}
+      />
       <PokemonCard doudi={pokemonList[pokemonIndex]} />
       
       </div>
