@@ -12,6 +12,19 @@ margin-top: -300px;
   color: pink;
   cursor: pointer;
 }
+.precedent{
+  background-color: goldenrod;
+  font-weight: bolder;
+}
+.suivant{
+  background-color: goldenrod;
+  font-weight: bolder;
+}
+.btn{
+  display: flex;
+  justify-content:space-between;
+
+}
 .world:hover{
   color: blue;
   cursor: pointer;

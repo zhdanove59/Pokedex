@@ -1,28 +1,66 @@
 import Hello from './component/nav'
 import PokemonCard from './components/PokemonCard'
 import './App.css'
+import { useState } from "react";
 
 function App() {
   const pokemonList = [
+
     {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "pika",
-      imgSrc:
-        "https://i.etsystatic.com/46611762/r/il/323a26/5653417372/il_794xN.5653417372_12rs.jpg",
-    },
-    {
-      name: "mew",
-    },
-  ]
+    
+        name: "bulbasaur",
+    
+        imgSrc:
+    
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    
+      },
+    
+      {
+    
+        name: "charmander",
+    
+        imgSrc:
+    
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    
+      },
+    
+      {
+        name: "squirtle",    
+        imgSrc:    
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",    
+      },    
+      {    
+        name: "pikachu",    
+        imgSrc:    
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      },
+      {
+        name: "mew",
+      },
+    ];
+  
+  const [pokemonIndex, setpokemonIndex] = useState(0);
+  const handleClickSuivant=()=>{
+    setpokemonIndex(pokemonIndex + 1)
+  }
+  const handleClickPrecedent=()=>{
+    setpokemonIndex(pokemonIndex - 1)
+  }
+  const btnPrecedentActive = pokemonIndex > 0;
+  const btnSuivantActive = pokemonIndex < pokemonList.length - 1;
+
   return (
     <>
     <div>
       <Hello/>
-      <PokemonCard doudi={pokemonList[0]} />
+      <div className='btn'>
+      <button disabled={!btnPrecedentActive} onClick={handleClickPrecedent} className='precedent'>Précédent</button>
+      <button disabled={!btnSuivantActive} onClick={handleClickSuivant} className='suivant'>Suivant</button>
+      </div>
+      <PokemonCard doudi={pokemonList[pokemonIndex]} />
+      
       </div>
       
     </>
