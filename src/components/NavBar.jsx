@@ -1,9 +1,9 @@
-function NavBar({
-    handleClickPrecedent,
-    handleClickSuivant,
-    btnPrecedentActive,
-    btnSuivantActive,
-  }) {
+function NavBar(
+  {handleClickPrecedent,
+  handleClickSuivant,
+  btnPrecedentActive,
+  btnSuivantActive,}) 
+{
     return (
       <div className='btn'>
         <button disabled={!btnPrecedentActive} onClick={handleClickPrecedent} className='precedent'>

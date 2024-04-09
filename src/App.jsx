@@ -61,8 +61,7 @@ function App() {
       handleClickPrecedent={handleClickPrecedent}
       handleClickSuivant={handleClickSuivant}
       btnPrecedentActive={btnPrecedentActive}
-      btnSuivantActive={btnSuivantActive}
-      />
+      btnSuivantActive={btnSuivantActive}/>
       <PokemonCard doudi={pokemonList[pokemonIndex]} />
       
       </div>
